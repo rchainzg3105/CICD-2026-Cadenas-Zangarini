@@ -7,9 +7,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: 'main'
-    
-    env:
-      REPO_NAME: ${{ github.event.repository.name }}
 
     steps:
       - name: Checkout code
