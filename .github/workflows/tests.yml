@@ -27,8 +27,8 @@ jobs:
 
       - name: Run unit tests
         run: |
-          pytest ./hello-service/test/test-unit.py
+          pytest ./hello-service/test/test_unit.py
 
       - name: Run E2E tests
         run: |
-          pytest ./hello-service/test/test-integration.py
+          pytest ./hello-service/test/test_integration.py
