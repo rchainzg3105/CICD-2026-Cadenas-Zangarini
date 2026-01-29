@@ -1,0 +1,17 @@
+name: Flake8 Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  flake8-lint:
+    runs-on: 'dev'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Run Flake8
+        run: python3 -m flake8 .
