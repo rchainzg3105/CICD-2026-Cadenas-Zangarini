@@ -10,7 +10,7 @@ jobs:
     runs-on: 'dev'
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         
       - name: Run Flake8
         run: python3 -m flake8 .
