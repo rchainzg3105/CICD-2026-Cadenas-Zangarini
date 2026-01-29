@@ -8,10 +8,16 @@ on:
 jobs:
   flake8-lint:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         
+      - name: Install Flake8
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install flake8
+
       - name: Run Flake8
         run: python3 -m flake8 .
 
