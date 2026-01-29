@@ -27,8 +27,12 @@ jobs:
 
       - name: Run unit tests
         run: |
+          cd hello-service
+          export PYTHONPATH=.
           pytest ./hello-service/test/test_unit.py
 
       - name: Run E2E tests
         run: |
+          cd hello-service
+          export PYTHONPATH=.
           pytest ./hello-service/test/test_integration.py
