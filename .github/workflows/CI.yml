@@ -3,6 +3,7 @@ name: CI
 on:
   pull_request:
     branches:
+      - main
       - dev
 
 jobs:
@@ -12,7 +13,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Install Flake8
         run: |
           python3 -m pip install --upgrade pip
