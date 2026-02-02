@@ -80,5 +80,5 @@ jobs:
 
       - name: Build and push image
         run: |
-          docker build -t rchainzg/hello-service:${{ steps.version.outputs.version }} .
+          docker build -f hello-service/Dockerfile -t rchainzg/hello-service:${{ steps.version.outputs.version }} .
           docker push rchainzg/hello-service:${{ steps.version.outputs.version }}
