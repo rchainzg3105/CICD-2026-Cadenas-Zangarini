@@ -78,6 +78,13 @@ jobs:
           docker build -f hello-service/Dockerfile -t rchainzg/hello-service:${{ steps.version.outputs.version }} hello-service
           docker push rchainzg/hello-service:${{ steps.version.outputs.version }}
 
+      - name: Install OpenShift CLI
+        run: |
+          curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz
+          tar -xvf oc.tar.gz
+          sudo mv oc /usr/local/bin/
+          oc version
+
       - name: Login to OpenShift
         run: |
           oc login ${{ secrets.OPENSHIFT_SERVER }} \
