@@ -98,7 +98,7 @@ jobs:
           VERSION=${{ steps.version.outputs.version }}
           echo "Deploying version: $VERSION"
 
-          sed -i "s|__VERSION__|$VERSION|g" kubernetes/deployment.yaml
+          sed -i "s|__VERSION__|$VERSION|g" hello-service/kubernetes/deployment.yaml
 
           echo "Resulting manifest:"
           cat hello-service/kubernetes/deployment.yaml
