@@ -8,4 +8,4 @@ spec:
     kind: Service
     name: hello-service
   port:
-    targetPort: 8000
+    targetPort: http
