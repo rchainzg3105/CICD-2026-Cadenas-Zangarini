@@ -18,3 +18,4 @@ spec:
           image: rchainzg/hello-service:__VERSION__
           ports:
             - containerPort: 8000
+              name: http
