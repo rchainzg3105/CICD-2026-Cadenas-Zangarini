@@ -98,16 +98,16 @@ jobs:
           VERSION=${{ steps.version.outputs.version }}
           echo "Deploying version: $VERSION"
 
-          sed -i "s|__VERSION__|$VERSION|g" k8s/deployment.yaml
+          sed -i "s|__VERSION__|$VERSION|g" kubernetes/deployment.yaml
 
           echo "Resulting manifest:"
-          cat k8s/deployment.yaml
+          cat hello-service/kubernetes/deployment.yaml
 
       - name: Apply Kubernetes manifests
         run: |
-          oc apply -f k8s/deployment.yaml
-          oc apply -f k8s/service.yaml
-          oc apply -f k8s/route.yaml
+          oc apply -f hello-service/kubernetes/deployment.yaml
+          oc apply -f hello-service/kubernetes/service.yaml
+          oc apply -f hello-service/kubernetes/route.yaml
 
       - name: Create git tag
         run: |
